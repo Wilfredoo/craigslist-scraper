@@ -60,3 +60,5 @@ const scrapeIt = async (area, category, csv) => {
   await scrapeIt(newJersey, general, njCSV);
   await scrapeIt(newJersey, skilled, njCSV);
 })();
+
+// yep

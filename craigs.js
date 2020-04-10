@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs-extra");
 
 const scrapeIt = async (area, category, csv) => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
   await page.goto(`${area}${category}?`);

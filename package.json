@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "fs-extra": "^9.0.0",
+    "puppeteer": "^3.0.2"
+  },
+  "name": "craigslist-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Wilfredoo/craigslist-scraper.git",
+  "author": "<casas.farach@gmail.com>",
+  "license": "MIT"
+}

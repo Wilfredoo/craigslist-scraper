@@ -4,10 +4,14 @@ const fs2 = require("fs");
 
 const truncateIt = async (area, category, csv) => {
 	fs2.truncate("./nyc.csv", 0, function () {
-		console.log("done");
+		console.log("cleaned nyc");
 	});
 	fs2.truncate("./nj.csv", 0, function () {
-		console.log("done");
+		console.log("cleaned nj");
+	});
+
+	fs2.truncate("./tx.csv", 0, function () {
+		console.log("cleaned metroplex");
 	});
 };
 
@@ -49,6 +53,8 @@ const scrapeIt = async (area, category, csv) => {
 	// areas
 	const newYork = "https://newyork.craigslist.org/search/";
 	const newJersey = "https://newjersey.craigslist.org/search/";
+	const metroplex = "https://dallas.craigslist.org/search/";
+
 	// categories
 	const food = "fbh";
 	const general = "lab";
@@ -56,6 +62,8 @@ const scrapeIt = async (area, category, csv) => {
 	// csv's
 	const nyCSV = "nyc.csv";
 	const njCSV = "nj.csv";
+	const txCSV = "tx.csv";
+
 
 	await truncateIt();
 
@@ -66,4 +74,8 @@ const scrapeIt = async (area, category, csv) => {
 	await scrapeIt(newJersey, food, njCSV);
 	await scrapeIt(newJersey, general, njCSV);
 	await scrapeIt(newJersey, skilled, njCSV);
+
+	await scrapeIt(metroplex, food, txCSV);
+	await scrapeIt(metroplex, general, txCSV);
+	await scrapeIt(metroplex, skilled, txCSV);
 })();
